@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "161856426422",
+    "firebase_url": "https://autogallery-78fa5.firebaseio.com",
+    "project_id": "autogallery-78fa5",
+    "storage_bucket": "autogallery-78fa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161856426422:android:45d13aad937340c4",
+        "android_client_info": {
+          "package_name": "com.example.dell.autogallery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161856426422-jf0ho3v9tu9tjltfh9u87ofav8h4ucme.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dell.autogallery",
+            "certificate_hash": "06995540061409e43c361abb761ac296940b65d4"
+          }
+        },
+        {
+          "client_id": "161856426422-j02qi6f3vkavgqerotbpb8bk7qibgj96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBetqBv3RCVclgauo61xMOIj-BMZchqB-E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161856426422-j02qi6f3vkavgqerotbpb8bk7qibgj96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

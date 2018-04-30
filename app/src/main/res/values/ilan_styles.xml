@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- TextView Styles -->
+
+    <!-- TextInputLayout Styles -->
+    <style name="AutoTextInputLytStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">@dimen/spacing_small</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_small</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">@dimen/spacing_small</item>
+        <item name="android:layout_marginRight">@dimen/spacing_small</item>
+        <!--margin 12dp because there is a 4dp default space from TextInputLayout-->
+    </style>
+
+
+    <!-- EditText Styles -->
+    <style name="AutoEtStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <!-- ImageView Styles -->
+
+
+</resources>

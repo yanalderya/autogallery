@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.dell.autogallery.ui.DashboardActivity">
+
+    <TextView
+        android:id="@+id/view_item_txtBrand"
+        android:textColor="@color/black"
+        android:text="@string/brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/view_item_txtModel"
+        android:text="@string/model"
+        android:textColor="@color/black"
+        android:layout_below="@+id/view_item_txtBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/view_item_txtPrice"
+        android:text="@string/price"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="RelativeOverlap,RtlHardcoded" />
+
+
+
+</RelativeLayout>

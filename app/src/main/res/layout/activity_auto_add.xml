@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    tools:context="com.example.dell.autogallery.ui.AutoAddActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/activity_auto_img_auto_photo"
+            android:layout_width="@dimen/activity_auto_photo_size"
+            android:layout_height="@dimen/activity_auto_photo_size"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDetayName" />
+
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/brand_selection"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:spinnerMode="dropdown" />
+
+
+
+        <android.support.design.widget.TextInputLayout
+        style="@style/AutoTextInputLytStyle"
+        android:layout_marginTop="@dimen/spacing_smaller">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/activity_auto_add_model_year"
+            style="@style/AutoEtStyle"
+            android:hint="@string/hint_model_yili" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/AutoTextInputLytStyle"
+        android:layout_marginTop="@dimen/spacing_smaller">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/activity_auto_add_price"
+            style="@style/AutoEtStyle"
+            android:hint="@string/hint_fiyat" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/AutoTextInputLytStyle"
+        android:layout_marginTop="@dimen/spacing_smaller">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/activity_autoo_add_km"
+            style="@style/AutoEtStyle"
+            android:hint="@string/hint_km" />
+    </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/contact_information_caps"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_medium"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_gear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/gear"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_fuel_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/fuel_type"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_engine_capacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/engine_capacity"
+            android:spinnerMode="dropdown" />
+
+
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_fuel_comsumption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/fuel_comsumption"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/activity_auto_add_spinner_engine_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_smaller"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:entries="@array/engine_power"
+            android:spinnerMode="dropdown" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/contact_information_caps2"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_medium"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_abk_brake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_abs_brake"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_rear_parking_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_rear_parking_warning"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_headlamp_wash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_headlamp_wash"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_front_airbags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_front_airbags"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_pessenger_airbag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_pessenger_airbag"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/contact_information_caps3"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_medium"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_compartment_air_conditioner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_compartment_air_conditioner"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_leather_upholstery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_leather_upholstery"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_electric_drivers_eat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_electric_drivers_eat"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_rear_parking_sensor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_rear_parking_sensor"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+        <CheckBox
+            android:id="@+id/activity_auto_checkbox_text_road_computer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@string/check_text_road_computer"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_smaller"
+            android:background="@drawable/shape_stroke_top_bottom_gray"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/activity_auto_add_auto_crash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_small"
+                android:paddingTop="@dimen/spacing_medium"
+                android:text="@string/switch_text_have_a_crash_condition"
+                android:textSize="@dimen/font_medium" />
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/AutoTextInputLytStyle"
+                android:layout_marginTop="@dimen/spacing_smaller">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/activity_auto_car_crash"
+                    style="@style/AutoEtStyle"
+                    android:hint="@string/hint_crash" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/activity_auto_add_btnAdvertise"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="28dp"
+            android:layout_gravity="center"
+            android:text="@string/button_advert"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_parent"/>
+
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
