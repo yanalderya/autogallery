@@ -15,8 +15,6 @@ import android.widget.*
 import com.example.dell.autogallery.R
 import com.example.dell.autogallery.dialog.AutoPhotoFragment
 import com.example.dell.autogallery.dto.AutoDTO
-import com.example.dell.autogallery.dto.ComfortAccessoriesDTO
-import com.example.dell.autogallery.dto.SecurityEquipmentDTO
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.database.FirebaseDatabase
@@ -45,27 +43,12 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
     private val spinnerFuelComsumption by lazy { findViewById<Spinner>(R.id.activity_auto_add_spinner_fuel_comsumption) }
     private val spinnerEnginePower by lazy { findViewById<Spinner>(R.id.activity_auto_add_spinner_engine_power) }
 
-    //Security Equipment
-//    private val checkBoxAbkBrake by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_abk_brake) }
-//    private val checkBoxRearParkingWarning by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_parking_warning) }
-//    private val checkBoxHeadlampWash by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_headlamp_wash) }
-//    private val checkBoxFrontAirbags by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_front_airbags) }
-//    private val checkBoxPessengerAirbag by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_pessenger_airbag) }
-//
-//    //Comfort Accessories
-//    private val checkBoxCompartmentAirCondioner by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_compartment_air_conditioner) }
-//    private val checkBoxLeatherUpholstery by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_leather_upholstery) }
-//    private val checkBoxElectricDriversEat by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_electric_drivers_eat) }
-//    private val checkBoxRearParkingSensor by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_rear_parking_sensor) }
-//    private val checkBoxRoadComputer by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_text_road_computer) }
-//
-//    //Accident Report
-//    private val switchAutoCrash by lazy { findViewById<Switch>(R.id.activity_auto_add_auto_crash) }
-//    private val inputCarCrash by lazy { findViewById<TextInputEditText>(R.id.activity_auto_car_crash) }
+    //Additional Features
+    private val inputAddDescription by lazy { findViewById<TextInputEditText>(R.id.activity_auto_add_description) }
 
-
-    // Inflates the dialog with custom view
-
+    //Accident Report
+    private val switchAutoCrash by lazy { findViewById<Switch>(R.id.activity_auto_add_auto_crash) }
+    private val inputCarCrash by lazy { findViewById<TextInputEditText>(R.id.activity_auto_car_crash) }
 
     //Button Save
     private val btnAdvertise by lazy { findViewById<Button>(R.id.activity_auto_add_btnAdvertise) }
@@ -85,6 +68,37 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auto_add)
 
+
+        initEvent()
+        firebase()
+
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == 150) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
+                val dialog = AutoPhotoFragment()
+                dialog.show(supportFragmentManager, "photoSelect")
+            } else {
+                Toast.makeText(this, "Tüm izinleri veriniz.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun getPhotoPath(photoPath: Uri?) {
+
+        fromToGalleryURI = photoPath
+        Picasso.with(this).load(fromToGalleryURI).resize(300, 100).into(btnAutoPhoto)
+    }
+
+    override fun getPhotoBitmap(bitmap: Bitmap) {
+
+        fromToCameraBitmap = bitmap
+        btnAutoPhoto.setImageBitmap(bitmap)
+
+    }
+
+    private fun initEvent() {
 
         spinnerBrand.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -111,30 +125,15 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
         }
 
-        firebase()
+        switchAutoCrash.setOnCheckedChangeListener { _, isChecked ->
 
-    }
+            inputCarCrash.visibility=View.VISIBLE
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        if (requestCode == 150) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-                val dialog = AutoPhotoFragment()
-                dialog.show(supportFragmentManager, "photoSelect")
-            } else {
-                Toast.makeText(this, "Tüm izinleri veriniz.", Toast.LENGTH_SHORT).show()
+            if (isChecked==false){
+                inputCarCrash.visibility=View.GONE
             }
+
         }
-    }
-
-    override fun getPhotoPath(photoPath: Uri?) {
-
-        fromToGalleryURI = photoPath
-        Picasso.with(this).load(fromToGalleryURI).resize(100, 100).into(btnAutoPhoto)
-    }
-
-    override fun getPhotoBitmap(bitmap: Bitmap) {
-
-        fromToCameraBitmap = bitmap
 
     }
 
@@ -143,8 +142,6 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         btnAdvertise.setOnClickListener {
 
             addAuto()
-            addSecurityEquipment()
-            addComfortAccessories()
 
             if (fromToGalleryURI != null) {
 
@@ -158,34 +155,10 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         }
     }
 
-    private fun addComfortAccessories() {
-        val comfortAccessories = ComfortAccessoriesDTO()
-        comfortAccessories.compartmentAirCondioner = "false"
-        comfortAccessories.leatherUpholstery = "false"
-        comfortAccessories.electricDriversEat = "false"
-        comfortAccessories.rearParkingSensor = "true"
-        comfortAccessories.roadComputer = "true"
-
-        ref.child("arabalar").child(arabalarID).child("comfort").setValue(comfortAccessories)
-
-    }
-
-    private fun addSecurityEquipment() {
-
-        val securityEquipment = SecurityEquipmentDTO()
-        securityEquipment.abkBrake = "true"
-        securityEquipment.rearParkingWarning = "true"
-        securityEquipment.headlampWash = "false"
-        securityEquipment.frontAirbags = "false"
-        securityEquipment.pessengerAirbag = "true"
-
-
-        ref.child("arabalar").child(arabalarID).child("security").setValue(securityEquipment)
-    }
-
     private fun addAuto() {
 
         val veritabaninaEklenecekAraba = AutoDTO()
+        veritabaninaEklenecekAraba.id=arabalarID.toString()
         veritabaninaEklenecekAraba.brand = spinnerBrand.selectedItem.toString()
         veritabaninaEklenecekAraba.model = spinnerModel.selectedItem.toString()
         veritabaninaEklenecekAraba.modelYear = inputModelYear.text.toString()
@@ -196,6 +169,8 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         veritabaninaEklenecekAraba.engineCapacity = spinnerEngineCapacity.selectedItem.toString()
         veritabaninaEklenecekAraba.fuelComsumption = spinnerFuelComsumption.selectedItem.toString()
         veritabaninaEklenecekAraba.enginePower = spinnerEnginePower.selectedItem.toString()
+        veritabaninaEklenecekAraba.description=inputAddDescription.text.toString()
+        veritabaninaEklenecekAraba.carCrash=inputCarCrash.text.toString()
 
 
         ref.child("arabalar").child(arabalarID).setValue(veritabaninaEklenecekAraba)
@@ -289,7 +264,7 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
             var resimBytes: ByteArray? = null
 
-            for (i in 1..10) {
+            for (i in 1..2) {
                 resimBytes = convertBitmaptoByte(myBitmap, 100 / i)
                 publishProgress(resimBytes!!.size.toDouble())
             }

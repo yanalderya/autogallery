@@ -39,12 +39,12 @@
 
 
     <string name="contact_information_caps">TEKNİK ÖZELLİKLER</string>
-    <string name="contact_information_caps2">GÜVENLİK DONANIMLARI</string>
-    <string name="contact_information_caps3">KONFOR AKSESUARLARI</string>
+    <string name="contact_information_caps2">EK ÖZELLİKLER</string>
     <string name="button_advert">İlan Ekle</string>
     <string name="brand">Marka</string>
     <string name="model">Model</string>
     <string name="price">Fiyat</string>
+    <string name="exit">Çıkış</string>
 
 
     <!-- Teknik Özellikler -->
@@ -147,6 +147,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="takephoto">Fotoğraf Çek</string>
     <string name="selectgallery">Galeriye Git</string>
+    <string name="add_description">Açıklama Ekle</string>
+    <string name="gear">Vites</string>
+    <string name="fuel_type">Yakıt Tipi</string>
+    <string name="engine_capacity">Motor Hacmi</string>
+    <string name="fuel_comsuption">Yakıt Tüketimi</string>
+    <string name="engine_power">Motor Gücü</string>
 
 
 </resources>

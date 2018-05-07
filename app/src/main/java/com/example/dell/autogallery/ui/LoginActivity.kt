@@ -80,4 +80,9 @@ class LoginActivity : AppCompatActivity() {
     private fun progressBarGizle() {
         progressBar.visibility = View.GONE
     }
+
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        moveTaskToBack(true)
+//    }
 }

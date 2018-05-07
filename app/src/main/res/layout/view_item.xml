@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/shape_stroke_top_bottom_gray"
     tools:context="com.example.dell.autogallery.ui.DashboardActivity">
 
     <TextView
@@ -19,6 +20,7 @@
         android:id="@+id/view_item_txtModel"
         android:text="@string/model"
         android:textColor="@color/black"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/view_item_txtBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -29,7 +31,7 @@
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:textColor="@color/black"
+        android:textColor="@color/colorGoogleRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="RelativeOverlap,RtlHardcoded" />

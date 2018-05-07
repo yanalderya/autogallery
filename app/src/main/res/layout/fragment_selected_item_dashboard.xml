@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dialog.SelectedItemDashboardFragment"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/dialog_qr_code_textId"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="7dp"
+        android:text="Qr Code Generator"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_qr_code_imageQr"
+        app:layout_constraintStart_toStartOf="@+id/dialog_qr_code_imageQr"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/dialog_qr_code_imageQr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_tv_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:padding="@dimen/spacing_smaller"
+        android:text="KAYDET"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGoogleGreen"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dialog_tv_cancel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="11dp"
+        android:padding="@dimen/spacing_smaller"
+        android:text="VAZGEÇ"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGoogleBlue"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/dialog_tv_submit"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_qr_code_imageQr" />
+
+    <TextView
+        android:id="@+id/dialog_tv_deleteAdvertise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:padding="@dimen/spacing_smaller"
+        android:text="İlanı Sil"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGoogleRed"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dialog_qr_code_imageQr"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_qr_code_imageQr" />
+
+</android.support.constraint.ConstraintLayout>
