@@ -28,7 +28,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/etDetayName" />
 
-
         <Spinner
             android:id="@+id/activity_auto_add_spinner_brand"
             android:layout_width="match_parent"
@@ -54,8 +53,6 @@
             android:paddingTop="@dimen/spacing_medium"
             android:spinnerMode="dropdown" />
 
-
-
         <android.support.design.widget.TextInputLayout
         style="@style/AutoTextInputLytStyle"
         android:layout_marginTop="@dimen/spacing_smaller">
@@ -75,7 +72,6 @@
             style="@style/AutoEtStyle"
             android:hint="@string/hint_fiyat" />
     </android.support.design.widget.TextInputLayout>
-
 
     <android.support.design.widget.TextInputLayout
         style="@style/AutoTextInputLytStyle"
@@ -137,8 +133,6 @@
             android:entries="@array/engine_capacity"
             android:spinnerMode="dropdown" />
 
-
-
         <Spinner
             android:id="@+id/activity_auto_add_spinner_fuel_comsumption"
             android:layout_width="match_parent"
@@ -164,8 +158,6 @@
             android:backgroundTint="@color/colorAccent"
             android:entries="@array/engine_power"
             android:spinnerMode="dropdown" />
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -205,8 +197,48 @@
             android:background="@drawable/shape_stroke_top_bottom_gray"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_normal"
+                android:text="@string/contact_information_caps3"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_medium"
+                android:textStyle="bold" />
+
             <Switch
-                android:id="@+id/activity_auto_add_auto_crash"
+                android:id="@+id/activity_auto_add_auto_changing_piece"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_small"
+                android:paddingTop="@dimen/spacing_medium"
+                android:text="@string/switch_text_changing_piece"
+                android:textSize="@dimen/font_medium"
+                android:thumbTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_front_right_fender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_front_right_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_rear_right_fender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_normal"
@@ -214,21 +246,451 @@
                 android:layout_marginRight="@dimen/spacing_normal"
                 android:layout_marginStart="@dimen/spacing_normal"
                 android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_rear_right_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_front_left_fender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_front_left_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_rear_left_fender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_rear_left_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_front_bumper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_front_bumper"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_rear_bumper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_rear_bumper"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_right_front_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_right_front_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_left_front_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_left_front_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_right_rear_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_right_rear_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_left_rear_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_left_rear_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_luggage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_luggage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_ceiling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_ceiling"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_bonnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_bonnet"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleRed"/>
+
+            <Switch
+                android:id="@+id/activity_auto_painted_piece"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
                 android:paddingBottom="@dimen/spacing_small"
                 android:paddingTop="@dimen/spacing_medium"
-                android:text="@string/switch_text_have_a_crash_condition"
-                android:textSize="@dimen/font_medium" />
+                android:text="@string/switch_text_painted_piece"
+                android:textSize="@dimen/font_medium"
+                android:thumbTint="@color/colorGoogleYellow"/>
 
-            <android.support.design.widget.TextInputLayout
-                style="@style/AutoTextInputLytStyle"
-                android:layout_marginTop="@dimen/spacing_smaller">
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_front_right_fender2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_front_right_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/activity_auto_car_crash"
-                    style="@style/AutoEtStyle"
-                    android:hint="@string/hint_crash"
-                    android:visibility="gone"/>
-            </android.support.design.widget.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_rear_right_fender2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_rear_right_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_front_left_fender2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_front_left_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_rear_left_fender2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_rear_left_fender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_front_bumper2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_front_bumper"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_rear_bumper2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_rear_bumper"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_right_front_door2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_right_front_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_left_front_door2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_left_front_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_right_rear_door2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_right_rear_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_left_rear_door2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_left_rear_door"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_luggage2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_luggage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_ceiling2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_ceiling"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <CheckBox
+                android:id="@+id/activity_auto_checkbox_bonnet2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:paddingBottom="@dimen/spacing_normal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:text="@string/check_text_bonnet"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"
+                android:buttonTint="@color/colorGoogleYellow"/>
+
+            <Switch
+                android:id="@+id/activity_auto_add_accident_free"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_small"
+                android:paddingTop="@dimen/spacing_medium"
+                android:text="@string/switch_text_accident_free"
+                android:textSize="@dimen/font_medium"
+                android:thumbTint="@color/azureDark"/>
+
 
 
         </LinearLayout>

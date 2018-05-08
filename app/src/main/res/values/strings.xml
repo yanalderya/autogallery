@@ -20,26 +20,29 @@
     <!-- Açılan diyaloglar için -->
     <string name="hint_crash">Hasar Görmüş Yerler</string>
 
-    <!--Kaza raporu yeri-->
-    <string name="switch_text_have_a_crash_condition">Arabanın Kazası Var Mı?</string>
 
-    <!--Security Equipment -->
-    <string name="check_text_abs_brake">ABS FREN</string>
-    <string name="check_text_rear_parking_warning">Arka Park İkazı</string>
-    <string name="check_text_headlamp_wash">Far Yıkama</string>
-    <string name="check_text_front_airbags">Ön Hava Yastıkları</string>
-    <string name="check_text_pessenger_airbag">Yolcu Hava Yastığı</string>
-
-    <!-- comfort accessories -->
-    <string name="check_text_compartment_air_conditioner">2 Bölmeli Otomatik Klima</string>
-    <string name="check_text_leather_upholstery">Deri Döşeme</string>
-    <string name="check_text_electric_drivers_eat">Elektrikli Sürücü Koltuğu</string>
-    <string name="check_text_rear_parking_sensor">Arka Park Sensörü</string>
-    <string name="check_text_road_computer">Yol Bilgisayarı</string>
+    <!--Kaza Raporu -->
+    <string name="switch_text_changing_piece">Değişen Parça</string>
+    <string name="switch_text_painted_piece">Boyalı Parça</string>
+    <string name="switch_text_accident_free">Kazasız</string>
+    <string name="check_text_front_right_fender">Ön Sağ Çamurluk</string>
+    <string name="check_text_rear_right_fender">Arka Sağ Çamurluk</string>
+    <string name="check_text_front_left_fender">Ön Sol Çamurluk</string>
+    <string name="check_text_rear_left_fender">Arka Sol Çamurluk</string>
+    <string name="check_text_front_bumper">Ön Tampon</string>
+    <string name="check_text_rear_bumper">Arka Tampon</string>
+    <string name="check_text_right_front_door">Sağ Ön Kapı</string>
+    <string name="check_text_left_front_door">Sol Ön Kapı</string>
+    <string name="check_text_right_rear_door">Sağ Arka Kapı</string>
+    <string name="check_text_left_rear_door">Sol Arka Kapı</string>
+    <string name="check_text_luggage">Bagaj</string>
+    <string name="check_text_ceiling">Tavan</string>
+    <string name="check_text_bonnet">Kaput</string>
 
 
     <string name="contact_information_caps">TEKNİK ÖZELLİKLER</string>
     <string name="contact_information_caps2">EK ÖZELLİKLER</string>
+    <string name="contact_information_caps3">KAZA RAPORU</string>
     <string name="button_advert">İlan Ekle</string>
     <string name="brand">Marka</string>
     <string name="model">Model</string>
@@ -57,11 +60,9 @@
         <item>Volkswagen</item>
 
     </string-array>
-
     <string-array name="Marka">
         <item>Model</item>
     </string-array>
-
     <string-array name="Ford">
         <item>Cougar</item>
         <item>Fiesta</item>
@@ -69,7 +70,6 @@
         <item>Granada</item>
         <item>Orion</item>
     </string-array>
-
     <string-array name="Mercedes">
         <item>A</item>
         <item>B</item>
@@ -77,7 +77,6 @@
         <item>CLA</item>
         <item>CLC</item>
     </string-array>
-
     <string-array name="Nissan">
         <item>Almera</item>
         <item>Micra</item>
@@ -85,7 +84,6 @@
         <item>Pulsar</item>
         <item>Sunny</item>
     </string-array>
-
     <string-array name="Toyota">
         <item>Auris</item>
         <item>Carina</item>
@@ -93,7 +91,6 @@
         <item>Prius</item>
         <item>Verso</item>
     </string-array>
-
     <string-array name="Volkswagen">
         <item>Bora</item>
         <item>Golf</item>
@@ -108,7 +105,6 @@
         <item>Yarı Otomatik</item>
         <item>Otomatik</item>
     </string-array>
-
     <string-array name="fuel_type">
         <item>Yakıt Tipi</item>
         <item>Benzin</item>
@@ -116,7 +112,6 @@
         <item>Hybrid</item>
         <item>Elektrik</item>
     </string-array>
-
     <string-array name="engine_capacity">
         <item>Motor Hacmi</item>
         <item>1201-1400 cm3</item>
@@ -126,7 +121,6 @@
         <item>2001-2500 cm3</item>
 
     </string-array>
-
     <string-array name="fuel_comsumption">
         <item>Yakıt Tüketimi</item>
         <item>4.3 lt / 4.9 lt</item>
@@ -134,7 +128,6 @@
         <item>5.3 lt/ 6.5 lt cm3</item>
 
     </string-array>
-
     <string-array name="engine_power">
         <item>Motor Gücü</item>
         <item>51-71 HP</item>

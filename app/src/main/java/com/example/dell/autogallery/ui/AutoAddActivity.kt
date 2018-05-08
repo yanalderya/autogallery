@@ -15,6 +15,7 @@ import android.widget.*
 import com.example.dell.autogallery.R
 import com.example.dell.autogallery.dialog.AutoPhotoFragment
 import com.example.dell.autogallery.dto.AutoDTO
+import com.example.dell.autogallery.dto.CrashDTO
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.database.FirebaseDatabase
@@ -22,11 +23,10 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import java.io.ByteArrayOutputStream
-import java.lang.Exception
 import java.util.*
 
-class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListener {
 
+class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListener, CompoundButton.OnCheckedChangeListener {
 
     //Auto Info
     private val btnAutoPhoto by lazy { findViewById<ImageView>(R.id.activity_auto_img_auto_photo) }
@@ -47,11 +47,28 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
     private val inputAddDescription by lazy { findViewById<TextInputEditText>(R.id.activity_auto_add_description) }
 
     //Accident Report
-    private val switchAutoCrash by lazy { findViewById<Switch>(R.id.activity_auto_add_auto_crash) }
-    private val inputCarCrash by lazy { findViewById<TextInputEditText>(R.id.activity_auto_car_crash) }
+//    private val switchAutoCrash by lazy { findViewById<Switch>(R.id.activity_auto_add_auto_crash) }
+//    private val inputCarCrash by lazy { findViewById<TextInputEditText>(R.id.activity_auto_car_crash) }
 
     //Button Save
     private val btnAdvertise by lazy { findViewById<Button>(R.id.activity_auto_add_btnAdvertise) }
+
+    //Checkbox Changing Piece
+    private val switchChangingPiece by lazy { findViewById<Switch>(R.id.activity_auto_add_auto_changing_piece) }
+    private val checkBoxFrontRightFender by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_front_right_fender) }
+    private val checkBoxRearRightFender by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_right_fender) }
+    private val checkBoxFrontLeftFender by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_front_left_fender) }
+    private val checkBoxRearLeftFender by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_left_fender) }
+    private val checkBoxFrontBumper by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_front_bumper) }
+    private val checkBoxRearBumper by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_bumper) }
+    private val checkBoxRightFrontDoor by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_right_front_door) }
+    private val checkBoxLeftFrontDoor by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_left_front_door) }
+    private val checkBoxRightRearDoor by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_right_rear_door) }
+    private val checkBoxLeftRearDoor by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_left_rear_door) }
+    private val checkBoxLuggage by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_luggage) }
+    private val checkBoxCeiling by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_ceiling) }
+    private val checkBoxBonnet by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_bonnet) }
+
 
     var flags = false
 
@@ -67,7 +84,6 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auto_add)
-
 
         initEvent()
         firebase()
@@ -125,23 +141,58 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
         }
 
-        switchAutoCrash.setOnCheckedChangeListener { _, isChecked ->
-
-            inputCarCrash.visibility=View.VISIBLE
-
-            if (isChecked==false){
-                inputCarCrash.visibility=View.GONE
-            }
-
-        }
+//        switchAutoCrash.setOnCheckedChangeListener { _, isChecked ->
+//
+//            inputCarCrash.visibility=View.VISIBLE
+//
+//            if (isChecked==false){
+//                inputCarCrash.visibility=View.GONE
+//            }
+//
+//        }
+        switchChangingPiece.setOnCheckedChangeListener(this)
 
     }
+
+    override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
+        if (p1) {
+            checkBoxFrontRightFender.visibility = View.VISIBLE
+            checkBoxRearRightFender.visibility = View.VISIBLE
+            checkBoxFrontLeftFender.visibility = View.VISIBLE
+            checkBoxRearLeftFender.visibility = View.VISIBLE
+            checkBoxFrontBumper.visibility = View.VISIBLE
+            checkBoxRearBumper.visibility = View.VISIBLE
+            checkBoxRightFrontDoor.visibility = View.VISIBLE
+            checkBoxLeftFrontDoor.visibility = View.VISIBLE
+            checkBoxRightRearDoor.visibility = View.VISIBLE
+            checkBoxLeftRearDoor.visibility = View.VISIBLE
+            checkBoxLuggage.visibility = View.VISIBLE
+            checkBoxCeiling.visibility = View.VISIBLE
+            checkBoxBonnet.visibility = View.VISIBLE
+        } else {
+            checkBoxFrontRightFender.visibility = View.GONE
+            checkBoxRearRightFender.visibility = View.GONE
+            checkBoxFrontLeftFender.visibility = View.GONE
+            checkBoxRearLeftFender.visibility = View.GONE
+            checkBoxFrontBumper.visibility = View.GONE
+            checkBoxRearBumper.visibility = View.GONE
+            checkBoxRightFrontDoor.visibility = View.GONE
+            checkBoxLeftFrontDoor.visibility = View.GONE
+            checkBoxRightRearDoor.visibility = View.GONE
+            checkBoxLeftRearDoor.visibility = View.GONE
+            checkBoxLuggage.visibility = View.GONE
+            checkBoxCeiling.visibility = View.GONE
+            checkBoxBonnet.visibility = View.GONE
+        }
+    }
+
 
     private fun firebase() {
 
         btnAdvertise.setOnClickListener {
 
             addAuto()
+            addChangingPiece()
 
             if (fromToGalleryURI != null) {
 
@@ -155,10 +206,62 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         }
     }
 
+    private fun addChangingPiece() {
+
+        val veritabaninaEklenecekKullanici = CrashDTO()
+
+        if (checkBoxFrontRightFender.isChecked) {
+            veritabaninaEklenecekKullanici.frontRightFender = checkBoxFrontRightFender.text.toString()
+        } else{}
+        if (checkBoxRearRightFender.isChecked) {
+            veritabaninaEklenecekKullanici.rearRightFender = checkBoxRearRightFender.text.toString()
+        } else{}
+        if (checkBoxFrontLeftFender.isChecked) {
+            veritabaninaEklenecekKullanici.frontLeftFender = checkBoxFrontLeftFender.text.toString()
+        } else{}
+        if (checkBoxRearLeftFender.isChecked) {
+            veritabaninaEklenecekKullanici.rearLeftFender = checkBoxRearLeftFender.text.toString()
+        } else{}
+        if (checkBoxFrontBumper.isChecked) {
+            veritabaninaEklenecekKullanici.frontBumper = checkBoxFrontBumper.text.toString()
+        } else{}
+        if (checkBoxRearBumper.isChecked) {
+            veritabaninaEklenecekKullanici.rearBumper = checkBoxRearBumper.text.toString()
+        } else{}
+        if (checkBoxRightFrontDoor.isChecked) {
+            veritabaninaEklenecekKullanici.rightFrontDoor = checkBoxRightFrontDoor.text.toString()
+        } else{}
+        if (checkBoxLeftFrontDoor.isChecked) {
+            veritabaninaEklenecekKullanici.leftFrontDoor = checkBoxLeftFrontDoor.text.toString()
+        } else{}
+        if (checkBoxRightRearDoor.isChecked) {
+            veritabaninaEklenecekKullanici.rightRearDoor = checkBoxRightRearDoor.text.toString()
+        } else{}
+        if (checkBoxLeftRearDoor.isChecked) {
+            veritabaninaEklenecekKullanici.leftRearDoor = checkBoxLeftRearDoor.text.toString()
+        } else{}
+        if (checkBoxLuggage.isChecked) {
+            veritabaninaEklenecekKullanici.luggage = checkBoxLuggage.text.toString()
+        } else{}
+        if (checkBoxCeiling.isChecked) {
+            veritabaninaEklenecekKullanici.ceiling = checkBoxCeiling.text.toString()
+        } else{}
+        if (checkBoxBonnet.isChecked) {
+            veritabaninaEklenecekKullanici.bonnet = checkBoxBonnet.text.toString()
+        }else{
+
+        }
+
+        ref.child("kazaRaporu").child("degisenParca").child(arabalarID).setValue(veritabaninaEklenecekKullanici)
+
+
+    }
+
+
     private fun addAuto() {
 
         val veritabaninaEklenecekAraba = AutoDTO()
-        veritabaninaEklenecekAraba.id=arabalarID.toString()
+        veritabaninaEklenecekAraba.id = arabalarID.toString()
         veritabaninaEklenecekAraba.brand = spinnerBrand.selectedItem.toString()
         veritabaninaEklenecekAraba.model = spinnerModel.selectedItem.toString()
         veritabaninaEklenecekAraba.modelYear = inputModelYear.text.toString()
@@ -169,8 +272,8 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         veritabaninaEklenecekAraba.engineCapacity = spinnerEngineCapacity.selectedItem.toString()
         veritabaninaEklenecekAraba.fuelComsumption = spinnerFuelComsumption.selectedItem.toString()
         veritabaninaEklenecekAraba.enginePower = spinnerEnginePower.selectedItem.toString()
-        veritabaninaEklenecekAraba.description=inputAddDescription.text.toString()
-        veritabaninaEklenecekAraba.carCrash=inputCarCrash.text.toString()
+        veritabaninaEklenecekAraba.description = inputAddDescription.text.toString()
+        //   veritabaninaEklenecekAraba.carCrash=inputCarCrash.text.toString()
 
 
         ref.child("arabalar").child(arabalarID).setValue(veritabaninaEklenecekAraba)
@@ -219,7 +322,7 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
                 ref.child("arabalar").child(arabalarID).child("profilePhoto").setValue(firebaseURI.toString())
 
-                Toast.makeText(this@AutoAddActivity,"Yükleme tamamlandı.",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AutoAddActivity, "Yükleme tamamlandı.", Toast.LENGTH_SHORT).show()
 
             }
 
@@ -276,7 +379,7 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
         override fun onProgressUpdate(vararg values: Double?) {
             super.onProgressUpdate(*values)
-            Toast.makeText(this@AutoAddActivity,"Suanki byte:"+values[0]!!/MEGABYTE+" MB",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@AutoAddActivity, "Suanki byte:" + values[0]!! / MEGABYTE + " MB", Toast.LENGTH_SHORT).show()
         }
 
         private fun convertBitmaptoByte(myBitmap: Bitmap?, i: Int): ByteArray? {
@@ -293,7 +396,6 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         }
 
     }
-
 
 
 }

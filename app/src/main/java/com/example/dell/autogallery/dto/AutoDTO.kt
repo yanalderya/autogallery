@@ -20,12 +20,12 @@ class AutoDTO:Serializable{
     var fuelComsumption: String? = null
     var enginePower:String? =null
     var description:String?=null
-    var carCrash:String?=null
+   // var carCrash:String?=null
 
 
     constructor(){}
 
-    constructor(profilePhoto: String?, brand: String?, model: String?, modelYear: String?, price: String?, km: String?, gear: String?, fuelType: String?, engineCapacity: String?, fuelComsumption: String?, enginePower: String?, description: String?, carCrash: String?) {
+    constructor(profilePhoto: String?, brand: String?, model: String?, modelYear: String?, price: String?, km: String?, gear: String?, fuelType: String?, engineCapacity: String?, fuelComsumption: String?, enginePower: String?, description: String?) {
         this.profilePhoto = profilePhoto
         this.brand = brand
         this.model = model
@@ -38,7 +38,7 @@ class AutoDTO:Serializable{
         this.fuelComsumption = fuelComsumption
         this.enginePower = enginePower
         this.description = description
-        this.carCrash = carCrash
+       // this.carCrash = carCrash
     }
 
 }
