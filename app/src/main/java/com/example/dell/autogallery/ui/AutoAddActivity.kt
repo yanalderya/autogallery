@@ -70,6 +70,26 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
     private val checkBoxBonnet by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_bonnet) }
 
 
+    //Checkbox Changing Piece
+    private val switchPaintedPiece by lazy { findViewById<Switch>(R.id.activity_auto_painted_piece) }
+    private val checkBoxFrontRightFender2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_front_right_fender2) }
+    private val checkBoxRearRightFender2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_right_fender2) }
+    private val checkBoxFrontLeftFender2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_front_left_fender2) }
+    private val checkBoxRearLeftFender2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_left_fender2) }
+    private val checkBoxFrontBumper2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_front_bumper2) }
+    private val checkBoxRearBumper2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_rear_bumper2) }
+    private val checkBoxRightFrontDoor2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_right_front_door2) }
+    private val checkBoxLeftFrontDoor2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_left_front_door2) }
+    private val checkBoxRightRearDoor2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_right_rear_door2) }
+    private val checkBoxLeftRearDoor2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_left_rear_door2) }
+    private val checkBoxLuggage2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_luggage2) }
+    private val checkBoxCeiling2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_ceiling2) }
+    private val checkBoxBonnet2 by lazy { findViewById<CheckBox>(R.id.activity_auto_checkbox_bonnet2) }
+
+    private val switchAccidentFree by lazy { findViewById<Switch>(R.id.activity_auto_add_accident_free) }
+    private val tvAccidentFree by lazy { findViewById<TextView>(R.id.activity_auto_tv_accident_free) }
+
+
     var flags = false
 
     //fotoğrafları uygulamada göstermek
@@ -85,8 +105,12 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auto_add)
 
+        title = getString(R.string.auto_add_title)
+
         initEvent()
         firebase()
+        PaintedPiece()
+        AccidentFree()
 
     }
 
@@ -112,6 +136,38 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         fromToCameraBitmap = bitmap
         btnAutoPhoto.setImageBitmap(bitmap)
 
+    }
+
+    override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
+        if (p1) {
+            checkBoxFrontRightFender.visibility = View.VISIBLE
+            checkBoxRearRightFender.visibility = View.VISIBLE
+            checkBoxFrontLeftFender.visibility = View.VISIBLE
+            checkBoxRearLeftFender.visibility = View.VISIBLE
+            checkBoxFrontBumper.visibility = View.VISIBLE
+            checkBoxRearBumper.visibility = View.VISIBLE
+            checkBoxRightFrontDoor.visibility = View.VISIBLE
+            checkBoxLeftFrontDoor.visibility = View.VISIBLE
+            checkBoxRightRearDoor.visibility = View.VISIBLE
+            checkBoxLeftRearDoor.visibility = View.VISIBLE
+            checkBoxLuggage.visibility = View.VISIBLE
+            checkBoxCeiling.visibility = View.VISIBLE
+            checkBoxBonnet.visibility = View.VISIBLE
+        } else {
+            checkBoxFrontRightFender.visibility = View.GONE
+            checkBoxRearRightFender.visibility = View.GONE
+            checkBoxFrontLeftFender.visibility = View.GONE
+            checkBoxRearLeftFender.visibility = View.GONE
+            checkBoxFrontBumper.visibility = View.GONE
+            checkBoxRearBumper.visibility = View.GONE
+            checkBoxRightFrontDoor.visibility = View.GONE
+            checkBoxLeftFrontDoor.visibility = View.GONE
+            checkBoxRightRearDoor.visibility = View.GONE
+            checkBoxLeftRearDoor.visibility = View.GONE
+            checkBoxLuggage.visibility = View.GONE
+            checkBoxCeiling.visibility = View.GONE
+            checkBoxBonnet.visibility = View.GONE
+        }
     }
 
     private fun initEvent() {
@@ -154,45 +210,14 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
     }
 
-    override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
-        if (p1) {
-            checkBoxFrontRightFender.visibility = View.VISIBLE
-            checkBoxRearRightFender.visibility = View.VISIBLE
-            checkBoxFrontLeftFender.visibility = View.VISIBLE
-            checkBoxRearLeftFender.visibility = View.VISIBLE
-            checkBoxFrontBumper.visibility = View.VISIBLE
-            checkBoxRearBumper.visibility = View.VISIBLE
-            checkBoxRightFrontDoor.visibility = View.VISIBLE
-            checkBoxLeftFrontDoor.visibility = View.VISIBLE
-            checkBoxRightRearDoor.visibility = View.VISIBLE
-            checkBoxLeftRearDoor.visibility = View.VISIBLE
-            checkBoxLuggage.visibility = View.VISIBLE
-            checkBoxCeiling.visibility = View.VISIBLE
-            checkBoxBonnet.visibility = View.VISIBLE
-        } else {
-            checkBoxFrontRightFender.visibility = View.GONE
-            checkBoxRearRightFender.visibility = View.GONE
-            checkBoxFrontLeftFender.visibility = View.GONE
-            checkBoxRearLeftFender.visibility = View.GONE
-            checkBoxFrontBumper.visibility = View.GONE
-            checkBoxRearBumper.visibility = View.GONE
-            checkBoxRightFrontDoor.visibility = View.GONE
-            checkBoxLeftFrontDoor.visibility = View.GONE
-            checkBoxRightRearDoor.visibility = View.GONE
-            checkBoxLeftRearDoor.visibility = View.GONE
-            checkBoxLuggage.visibility = View.GONE
-            checkBoxCeiling.visibility = View.GONE
-            checkBoxBonnet.visibility = View.GONE
-        }
-    }
-
-
     private fun firebase() {
 
         btnAdvertise.setOnClickListener {
 
             addAuto()
             addChangingPiece()
+            addPaintedPiece()
+            AccidentFree()
 
             if (fromToGalleryURI != null) {
 
@@ -206,49 +231,178 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
         }
     }
 
+    private fun AccidentFree() {
+        switchAccidentFree.setOnCheckedChangeListener { compoundButton, b ->
+            if (b) {
+                tvAccidentFree.text="Kazasız Araç"
+            } else {
+                tvAccidentFree.visibility=View.GONE
+            }
+
+            if(!tvAccidentFree.text.isNullOrEmpty()){
+
+            val veritabaninaEklenecekKullanici = CrashDTO()
+            veritabaninaEklenecekKullanici.accidentFree = tvAccidentFree.text.toString()
+            ref.child("kazaRaporu").child("kazasiz").child(arabalarID).setValue(veritabaninaEklenecekKullanici)
+
+            }
+
+
+        }
+    }
+
+    private fun PaintedPiece() {
+        switchPaintedPiece.setOnCheckedChangeListener { compoundButton, b ->
+            if (b) {
+                checkBoxFrontRightFender2.visibility = View.VISIBLE
+                checkBoxRearRightFender2.visibility = View.VISIBLE
+                checkBoxFrontLeftFender2.visibility = View.VISIBLE
+                checkBoxRearLeftFender2.visibility = View.VISIBLE
+                checkBoxFrontBumper2.visibility = View.VISIBLE
+                checkBoxRearBumper2.visibility = View.VISIBLE
+                checkBoxRightFrontDoor2.visibility = View.VISIBLE
+                checkBoxLeftFrontDoor2.visibility = View.VISIBLE
+                checkBoxRightRearDoor2.visibility = View.VISIBLE
+                checkBoxLeftRearDoor2.visibility = View.VISIBLE
+                checkBoxLuggage2.visibility = View.VISIBLE
+                checkBoxCeiling2.visibility = View.VISIBLE
+                checkBoxBonnet2.visibility = View.VISIBLE
+            } else {
+                checkBoxFrontRightFender2.visibility = View.GONE
+                checkBoxRearRightFender2.visibility = View.GONE
+                checkBoxFrontLeftFender2.visibility = View.GONE
+                checkBoxRearLeftFender2.visibility = View.GONE
+                checkBoxFrontBumper2.visibility = View.GONE
+                checkBoxRearBumper2.visibility = View.GONE
+                checkBoxRightFrontDoor2.visibility = View.GONE
+                checkBoxLeftFrontDoor2.visibility = View.GONE
+                checkBoxRightRearDoor2.visibility = View.GONE
+                checkBoxLeftRearDoor2.visibility = View.GONE
+                checkBoxLuggage2.visibility = View.GONE
+                checkBoxCeiling2.visibility = View.GONE
+                checkBoxBonnet2.visibility = View.GONE
+            }
+
+        }
+
+    }
+
+    private fun addPaintedPiece() {
+        val veritabaninaEklenecekKullanici = CrashDTO()
+
+        if (checkBoxFrontRightFender2.isChecked) {
+            veritabaninaEklenecekKullanici.frontRightFender = checkBoxFrontRightFender2.text.toString()
+        } else {
+        }
+        if (checkBoxRearRightFender2.isChecked) {
+            veritabaninaEklenecekKullanici.rearRightFender = checkBoxRearRightFender2.text.toString()
+        } else {
+        }
+        if (checkBoxFrontLeftFender2.isChecked) {
+            veritabaninaEklenecekKullanici.frontLeftFender = checkBoxFrontLeftFender2.text.toString()
+        } else {
+        }
+        if (checkBoxRearLeftFender2.isChecked) {
+            veritabaninaEklenecekKullanici.rearLeftFender = checkBoxRearLeftFender2.text.toString()
+        } else {
+        }
+        if (checkBoxFrontBumper2.isChecked) {
+            veritabaninaEklenecekKullanici.frontBumper = checkBoxFrontBumper2.text.toString()
+        } else {
+        }
+        if (checkBoxRearBumper2.isChecked) {
+            veritabaninaEklenecekKullanici.rearBumper = checkBoxRearBumper2.text.toString()
+        } else {
+        }
+        if (checkBoxRightFrontDoor2.isChecked) {
+            veritabaninaEklenecekKullanici.rightFrontDoor = checkBoxRightFrontDoor2.text.toString()
+        } else {
+        }
+        if (checkBoxLeftFrontDoor2.isChecked) {
+            veritabaninaEklenecekKullanici.leftFrontDoor = checkBoxLeftFrontDoor2.text.toString()
+        } else {
+        }
+        if (checkBoxRightRearDoor2.isChecked) {
+            veritabaninaEklenecekKullanici.rightRearDoor = checkBoxRightRearDoor2.text.toString()
+        } else {
+        }
+        if (checkBoxLeftRearDoor2.isChecked) {
+            veritabaninaEklenecekKullanici.leftRearDoor = checkBoxLeftRearDoor2.text.toString()
+        } else {
+        }
+        if (checkBoxLuggage2.isChecked) {
+            veritabaninaEklenecekKullanici.luggage = checkBoxLuggage2.text.toString()
+        } else {
+        }
+        if (checkBoxCeiling2.isChecked) {
+            veritabaninaEklenecekKullanici.ceiling = checkBoxCeiling2.text.toString()
+        } else {
+        }
+        if (checkBoxBonnet2.isChecked) {
+            veritabaninaEklenecekKullanici.bonnet = checkBoxBonnet2.text.toString()
+        } else {
+
+        }
+
+        ref.child("kazaRaporu").child("boyaliParca").child(arabalarID).setValue(veritabaninaEklenecekKullanici)
+
+    }
+
     private fun addChangingPiece() {
 
         val veritabaninaEklenecekKullanici = CrashDTO()
 
         if (checkBoxFrontRightFender.isChecked) {
             veritabaninaEklenecekKullanici.frontRightFender = checkBoxFrontRightFender.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxRearRightFender.isChecked) {
             veritabaninaEklenecekKullanici.rearRightFender = checkBoxRearRightFender.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxFrontLeftFender.isChecked) {
             veritabaninaEklenecekKullanici.frontLeftFender = checkBoxFrontLeftFender.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxRearLeftFender.isChecked) {
             veritabaninaEklenecekKullanici.rearLeftFender = checkBoxRearLeftFender.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxFrontBumper.isChecked) {
             veritabaninaEklenecekKullanici.frontBumper = checkBoxFrontBumper.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxRearBumper.isChecked) {
             veritabaninaEklenecekKullanici.rearBumper = checkBoxRearBumper.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxRightFrontDoor.isChecked) {
             veritabaninaEklenecekKullanici.rightFrontDoor = checkBoxRightFrontDoor.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxLeftFrontDoor.isChecked) {
             veritabaninaEklenecekKullanici.leftFrontDoor = checkBoxLeftFrontDoor.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxRightRearDoor.isChecked) {
             veritabaninaEklenecekKullanici.rightRearDoor = checkBoxRightRearDoor.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxLeftRearDoor.isChecked) {
             veritabaninaEklenecekKullanici.leftRearDoor = checkBoxLeftRearDoor.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxLuggage.isChecked) {
             veritabaninaEklenecekKullanici.luggage = checkBoxLuggage.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxCeiling.isChecked) {
             veritabaninaEklenecekKullanici.ceiling = checkBoxCeiling.text.toString()
-        } else{}
+        } else {
+        }
         if (checkBoxBonnet.isChecked) {
             veritabaninaEklenecekKullanici.bonnet = checkBoxBonnet.text.toString()
-        }else{
+        } else {
 
         }
 
@@ -256,7 +410,6 @@ class AutoAddActivity : AppCompatActivity(), AutoPhotoFragment.onAutoPhotoListen
 
 
     }
-
 
     private fun addAuto() {
 

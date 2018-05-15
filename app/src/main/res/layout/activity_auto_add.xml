@@ -159,36 +159,6 @@
             android:entries="@array/engine_power"
             android:spinnerMode="dropdown" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_smaller"
-            android:background="@drawable/shape_stroke_top_bottom_gray"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_normal"
-                android:text="@string/contact_information_caps2"
-                android:textAllCaps="true"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/font_medium"
-                android:textStyle="bold" />
-
-            <android.support.design.widget.TextInputLayout
-                style="@style/AutoTextInputLytStyle"
-                android:layout_marginTop="@dimen/spacing_smaller">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/activity_auto_add_description"
-                    style="@style/AutoEtStyle"
-                    android:hint="@string/add_description" />
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -691,6 +661,46 @@
                 android:textSize="@dimen/font_medium"
                 android:thumbTint="@color/azureDark"/>
 
+            <TextView
+                android:id="@+id/activity_auto_tv_accident_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_normal"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium"
+                android:visibility="gone"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_smaller"
+            android:background="@drawable/shape_stroke_top_bottom_gray"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_normal"
+                android:text="@string/contact_information_caps2"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_medium"
+                android:textStyle="bold" />
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/AutoTextInputLytStyle"
+                android:layout_marginTop="@dimen/spacing_smaller">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/activity_auto_add_description"
+                    style="@style/AutoEtStyle"
+                    android:hint="@string/add_description" />
+            </android.support.design.widget.TextInputLayout>
 
 
         </LinearLayout>

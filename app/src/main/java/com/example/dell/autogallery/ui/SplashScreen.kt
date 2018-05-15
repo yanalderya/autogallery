@@ -21,7 +21,7 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-
+        //kullanıcı her seferinde login olmasın diye
         if (firebaseAuth.currentUser != null) {
 
             val intent=Intent(this,GuestActivity::class.java)
@@ -31,7 +31,6 @@ class SplashScreen : AppCompatActivity() {
 
         initEvent()
     }
-
 
     private fun initEvent() {
 

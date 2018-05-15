@@ -42,7 +42,6 @@ class RegisterActivity : AppCompatActivity() {
                     newMember(edtMail.text.toString(), edtPassword.text.toString())
                     progressBarGoster()
 
-
                 } else {
                     Toast.makeText(this, "Şifreler Eşleşmiyor", Toast.LENGTH_SHORT).show()
                 }
@@ -51,7 +50,6 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-
 
     private fun newMember(mail: String, sifre: String) {
 

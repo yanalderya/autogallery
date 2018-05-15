@@ -10,7 +10,7 @@
     <string name="activity_register_confirm_password">Şifre Tekrar</string>
     <string name="avtivity_register_sign_up">Kayıt Ol</string>
     <string name="activity_login_password">Şifre</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_dashboard">Admin Paneli</string>
 
 
     <string name="hint_model_yili">Model Yılı</string>
@@ -22,9 +22,10 @@
 
 
     <!--Kaza Raporu -->
-    <string name="switch_text_changing_piece">Değişen Parça</string>
-    <string name="switch_text_painted_piece">Boyalı Parça</string>
+    <string name="switch_text_changing_piece">Değişen Parçalar</string>
+    <string name="switch_text_painted_piece">Boyalı Parçalar</string>
     <string name="switch_text_accident_free">Kazasız</string>
+    <string name="text_accident_free">Arabanın Kazası Yoktur.</string>
     <string name="check_text_front_right_fender">Ön Sağ Çamurluk</string>
     <string name="check_text_rear_right_fender">Arka Sağ Çamurluk</string>
     <string name="check_text_front_left_fender">Ön Sol Çamurluk</string>
@@ -146,6 +147,8 @@
     <string name="engine_capacity">Motor Hacmi</string>
     <string name="fuel_comsuption">Yakıt Tüketimi</string>
     <string name="engine_power">Motor Gücü</string>
+    <string name="auto_info_title">İlan Detay</string>
+    <string name="auto_add_title">İlan Ekle</string>
 
 
 </resources>

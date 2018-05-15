@@ -29,6 +29,8 @@ class GuestActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guest)
 
+        setTitle("Hoşgeldiniz...")
+
         initEvent()
     }
 
@@ -55,13 +57,13 @@ class GuestActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
         }
         builder.setNegativeButton("Hayır") { dialog, which ->
             dialog.cancel()
-//            val intent=Intent(this,GuestActivity::class.java)
-//            startActivity(intent)
+            zXingScannerView?.visibility = View.GONE
+            lnrMasterView.visibility = View.VISIBLE
         }
         builder.setIcon(android.R.drawable.ic_dialog_alert)
         builder.show()
 
-        Toast.makeText(this, result.getText(), Toast.LENGTH_SHORT).show()
+       // Toast.makeText(this, result.getText(), Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -91,7 +93,7 @@ class GuestActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
             zXingScannerView = findViewById<ZXingScannerView>(R.id.activity_guest_zxingScannerView)
             zXingScannerView?.setResultHandler(this)
 
-            Toast.makeText(this, "Harikasın", Toast.LENGTH_SHORT).show()
+         //   Toast.makeText(this, "Harikasın", Toast.LENGTH_SHORT).show()
 
             zXingScannerView?.visibility = View.VISIBLE
             lnrMasterView.visibility = View.GONE

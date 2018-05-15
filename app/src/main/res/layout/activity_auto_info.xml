@@ -20,25 +20,23 @@
             android:id="@+id/activity_auto_info_photo"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="16dp"
             android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/etDetayName" />
-
 
         <ProgressBar
             android:id="@+id/activity_info_progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
             android:layout_gravity="center"
+            android:layout_marginTop="18dp"
             android:visibility="invisible"
             tools:ignore="MissingConstraints" />
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,7 +88,6 @@
             android:textColor="@color/black"
             android:textSize="@dimen/font_medium" />
 
-
         <TextView
             android:id="@+id/activity_auto_info_km"
             android:layout_width="wrap_content"
@@ -120,7 +117,6 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="@dimen/font_medium" />
-
 
         <TextView
             android:id="@+id/activity_auto_info_engine_capacity"
@@ -152,14 +148,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/font_medium" />
 
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_smaller"
-            android:background="@drawable/shape_stroke_top_bottom_gray"
-            android:orientation="vertical">
+        <include layout="@layout/crash_detail" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -183,7 +172,6 @@
                 android:textSize="@dimen/font_medium" />
 
 
-        </LinearLayout>
 
     </LinearLayout>
 

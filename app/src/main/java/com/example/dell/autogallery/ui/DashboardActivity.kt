@@ -26,7 +26,6 @@ class DashboardActivity : AppCompatActivity(),ValueEventListener {
     private lateinit var databaseEventDetail : DatabaseReference
     private lateinit var autoOnItemClickListener: AutoOnItemClickListener
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
@@ -45,7 +44,7 @@ class DashboardActivity : AppCompatActivity(),ValueEventListener {
 
         autoOnItemClickListener=object : AutoOnItemClickListener{
             override fun onItemClick(item: AutoDTO) {
-                Toast.makeText(this@DashboardActivity,"Aferin",Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this@DashboardActivity,"Aferin",Toast.LENGTH_SHORT).show()
                 val bundle = Bundle()
                 val dialog = SelectedItemDashboardFragment()
                 dialog.arguments=bundle

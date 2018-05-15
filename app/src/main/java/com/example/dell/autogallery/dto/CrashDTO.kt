@@ -18,10 +18,12 @@ class CrashDTO{
     var luggage:String? =null
     var ceiling:String?=null
     var bonnet:String?=null
+    var id:String?=null
+    var accidentFree:String?=null
 
-    constructor(){}
+    constructor()
 
-    constructor(frontRightFender: String?, rearRightFender: String?, frontLeftFender: String?, rearLeftFender: String?, frontBumper: String?, rearBumper: String?, rightFrontDoor: String?, leftFrontDoor: String?, rightRearDoor: String?, leftRearDoor: String?, luggage: String?, ceiling: String?, bonnet: String?) {
+    constructor(frontRightFender: String?, rearRightFender: String?, frontLeftFender: String?, rearLeftFender: String?, frontBumper: String?, rearBumper: String?, rightFrontDoor: String?, leftFrontDoor: String?, rightRearDoor: String?, leftRearDoor: String?, luggage: String?, ceiling: String?, bonnet: String?, id: String?, accidentFree: String?) {
         this.frontRightFender = frontRightFender
         this.rearRightFender = rearRightFender
         this.frontLeftFender = frontLeftFender
@@ -35,6 +37,8 @@ class CrashDTO{
         this.luggage = luggage
         this.ceiling = ceiling
         this.bonnet = bonnet
+        this.id = id
+        this.accidentFree = accidentFree
     }
 
 

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_smaller"
+    android:background="@drawable/shape_stroke_top_bottom_gray"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/contact_information_caps3"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activity_auto_info_changing_piece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/switch_text_changing_piece"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGoogleRed"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_front_right_fender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_front_right_fender"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_rear_right_fender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_rear_right_fender"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/activity_auto_info_front_left_fender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_front_left_fender"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_rear_left_fender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_rear_left_fender"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_front_bumper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_front_bumper"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_rear_bumper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_rear_bumper"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_right_front_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_right_front_door"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_left_front_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_left_front_door"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/activity_auto_info_right_rear_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_right_rear_door"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_left_rear_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_left_rear_door"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_luggage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_luggage"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_ceiling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_ceiling"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/activity_auto_info_bonnet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_normal"
+            android:text="@string/check_text_bonnet"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_medium"
+            android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_painted_piece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/switch_text_painted_piece"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGoogleYellow"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_front_right_fender2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_front_right_fender"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_rear_right_fender2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_rear_right_fender"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/activity_auto_info_front_left_fender2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_front_left_fender"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_rear_left_fender2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_rear_left_fender"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_front_bumper2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_front_bumper"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_rear_bumper2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_rear_bumper"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_right_front_door2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_right_front_door"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_left_front_door2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_left_front_door"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/activity_auto_info_right_rear_door2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_right_rear_door"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_left_rear_door2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_left_rear_door"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_luggage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_luggage"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_ceiling2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_ceiling"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_bonnet2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/check_text_bonnet"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_medium"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/activity_auto_info_accient_free"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="@string/text_accident_free"
+        android:textAllCaps="false"
+        android:textColor="@color/azureDark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+
+
+</LinearLayout>

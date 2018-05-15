@@ -72,7 +72,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
     private fun progressBarGoster() {
         progressBar.visibility = View.VISIBLE
     }
@@ -81,8 +80,4 @@ class LoginActivity : AppCompatActivity() {
         progressBar.visibility = View.GONE
     }
 
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        moveTaskToBack(true)
-//    }
 }
